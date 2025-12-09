@@ -50,18 +50,17 @@ Partial Class formRegister
         Panel1.Controls.Add(Label5)
         Panel1.Controls.Add(PictureBox3)
         Panel1.Controls.Add(PictureBox2)
-        Panel1.Location = New Point(2, 2)
-        Panel1.Margin = New Padding(3, 2, 3, 2)
+        Panel1.Location = New Point(2, 3)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(345, 340)
+        Panel1.Size = New Size(394, 453)
         Panel1.TabIndex = 8
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.Location = New Point(53, 0)
-        PictureBox1.Margin = New Padding(3, 2, 3, 2)
+        PictureBox1.Image = My.Resources.Resources.IMG_3539
+        PictureBox1.Location = New Point(61, 0)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(234, 188)
+        PictureBox1.Size = New Size(267, 251)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
@@ -71,9 +70,9 @@ Partial Class formRegister
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label6.ForeColor = Color.White
-        Label6.Location = New Point(90, 222)
+        Label6.Location = New Point(103, 296)
         Label6.Name = "Label6"
-        Label6.Size = New Size(141, 19)
+        Label6.Size = New Size(171, 23)
         Label6.TabIndex = 1
         Label6.Text = "(Profile Expert for IT)"
         ' 
@@ -82,19 +81,18 @@ Partial Class formRegister
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label5.ForeColor = Color.White
-        Label5.Location = New Point(30, 190)
+        Label5.Location = New Point(34, 253)
         Label5.Name = "Label5"
-        Label5.Size = New Size(265, 32)
+        Label5.Size = New Size(326, 41)
         Label5.TabIndex = 1
         Label5.Text = "Wellcome To ProEx-IT"
         ' 
         ' PictureBox3
         ' 
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(-74, -57)
-        PictureBox3.Margin = New Padding(3, 2, 3, 2)
+        PictureBox3.Location = New Point(-85, -76)
         PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(129, 402)
+        PictureBox3.Size = New Size(147, 536)
         PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox3.TabIndex = 3
         PictureBox3.TabStop = False
@@ -102,42 +100,45 @@ Partial Class formRegister
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(245, 164)
-        PictureBox2.Margin = New Padding(3, 2, 3, 2)
+        PictureBox2.Location = New Point(280, 219)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(130, 288)
+        PictureBox2.Size = New Size(149, 384)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 4
         PictureBox2.TabStop = False
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(432, 255)
-        Button2.Margin = New Padding(3, 2, 3, 2)
+        Button2.BackColor = Color.DodgerBlue
+        Button2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button2.ForeColor = Color.White
+        Button2.Location = New Point(494, 340)
         Button2.Name = "Button2"
-        Button2.Size = New Size(82, 28)
+        Button2.Size = New Size(94, 37)
         Button2.TabIndex = 19
         Button2.Text = "Kembali"
-        Button2.UseVisualStyleBackColor = True
+        Button2.UseVisualStyleBackColor = False
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(536, 255)
-        Button1.Margin = New Padding(3, 2, 3, 2)
+        Button1.BackColor = Color.LimeGreen
+        Button1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button1.ForeColor = Color.White
+        Button1.Location = New Point(613, 340)
         Button1.Name = "Button1"
-        Button1.Size = New Size(82, 28)
+        Button1.Size = New Size(94, 37)
         Button1.TabIndex = 20
         Button1.Text = "Register"
-        Button1.UseVisualStyleBackColor = True
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = Color.Teal
-        Label3.Location = New Point(415, 194)
+        Label3.Location = New Point(474, 259)
         Label3.Name = "Label3"
-        Label3.Size = New Size(57, 15)
+        Label3.Size = New Size(73, 20)
         Label3.TabIndex = 17
         Label3.Text = "Password"
         ' 
@@ -146,26 +147,24 @@ Partial Class formRegister
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = Color.Teal
-        Label2.Location = New Point(415, 135)
+        Label2.Location = New Point(474, 180)
         Label2.Name = "Label2"
-        Label2.Size = New Size(60, 15)
+        Label2.Size = New Size(78, 20)
         Label2.TabIndex = 18
         Label2.Text = "Username"
         ' 
         ' txbPassword
         ' 
-        txbPassword.Location = New Point(415, 212)
-        txbPassword.Margin = New Padding(3, 2, 3, 2)
+        txbPassword.Location = New Point(474, 283)
         txbPassword.Name = "txbPassword"
-        txbPassword.Size = New Size(219, 23)
+        txbPassword.Size = New Size(250, 27)
         txbPassword.TabIndex = 15
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(415, 152)
-        TextBox1.Margin = New Padding(3, 2, 3, 2)
+        TextBox1.Location = New Point(474, 203)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(219, 23)
+        TextBox1.Size = New Size(250, 27)
         TextBox1.TabIndex = 16
         ' 
         ' Label1
@@ -173,17 +172,17 @@ Partial Class formRegister
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.Teal
-        Label1.Location = New Point(446, 60)
+        Label1.Location = New Point(510, 80)
         Label1.Name = "Label1"
-        Label1.Size = New Size(142, 45)
+        Label1.Size = New Size(178, 54)
         Label1.TabIndex = 14
         Label1.Text = "Register"
         ' 
         ' formRegister
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(685, 343)
+        ClientSize = New Size(783, 457)
         Controls.Add(Button2)
         Controls.Add(Button1)
         Controls.Add(Label3)
@@ -192,6 +191,7 @@ Partial Class formRegister
         Controls.Add(TextBox1)
         Controls.Add(Label1)
         Controls.Add(Panel1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "formRegister"
         Text = "formRegister"
         Panel1.ResumeLayout(False)

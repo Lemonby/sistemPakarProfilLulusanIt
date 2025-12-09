@@ -101,11 +101,11 @@ Partial Class formLogin
         ' LinkLabel1
         ' 
         LinkLabel1.AutoSize = True
-        LinkLabel1.Font = New Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LinkLabel1.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         LinkLabel1.LinkColor = Color.Teal
         LinkLabel1.Location = New Point(637, 375)
         LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(56, 17)
+        LinkLabel1.Size = New Size(58, 17)
         LinkLabel1.TabIndex = 14
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "Register"
@@ -122,12 +122,15 @@ Partial Class formLogin
         ' 
         ' BtnLogin
         ' 
+        BtnLogin.BackColor = Color.LimeGreen
+        BtnLogin.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        BtnLogin.ForeColor = Color.White
         BtnLogin.Location = New Point(536, 312)
         BtnLogin.Name = "BtnLogin"
         BtnLogin.Size = New Size(94, 37)
         BtnLogin.TabIndex = 12
         BtnLogin.Text = "Login"
-        BtnLogin.UseVisualStyleBackColor = True
+        BtnLogin.UseVisualStyleBackColor = False
         ' 
         ' Label3
         ' 
@@ -179,11 +182,12 @@ Partial Class formLogin
         ' PictureBox1
         ' 
         PictureBox1.Image = My.Resources.Resources.IMG_3539
-        PictureBox1.Location = New Point(57, 21)
+        PictureBox1.InitialImage = My.Resources.Resources.IMG_3539
+        PictureBox1.Location = New Point(55, 0)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(254, 241)
+        PictureBox1.Size = New Size(267, 251)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 3
+        PictureBox1.TabIndex = 2
         PictureBox1.TabStop = False
         ' 
         ' formLogin
