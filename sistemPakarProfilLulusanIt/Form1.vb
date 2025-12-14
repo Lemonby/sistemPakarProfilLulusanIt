@@ -32,8 +32,8 @@ Public Class formLogin
                         MessageBox.Show("Login Berhasil! Selamat Datang, " & moduleKoneksi.CurrentUserName, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
                         ' 2. PINDAH KE FORM UTAMA (FORM3)
-                        Dim dashboard As New dashboard()
-                        dashboard.Show()
+                        Dim formSoal As New formSoal()
+                        formSoal.Show()
                         Me.Hide() ' Sembunyikan form login
                     Else
                         MessageBox.Show("Username atau Password salah!", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error)

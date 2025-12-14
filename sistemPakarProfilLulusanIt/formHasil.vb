@@ -7,7 +7,7 @@ Public Class formHasil
 
     'public property yang bakal dipake'
     Public Property profileName As String
-    Public Property confidenceLv As String
+    Public Property confidenceLv As Double  ' ✅ UBAH ke Double
     Public Property description As String
 
     ' Constructor dengan parameter
@@ -55,16 +55,24 @@ Public Class formHasil
                     MessageBoxIcon.Information)
 
                 If result = DialogResult.Yes Then
-                    Process.Start(saveDialog.FileName)
+                    ' ✅ Fix untuk Windows
+                    Process.Start(New ProcessStartInfo(saveDialog.FileName) With {
+                        .UseShellExecute = True
+                    })
                 End If
             End If
 
         Catch ex As Exception
-            MessageBox.Show("Error saat membuat PDF: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Error saat membuat PDF: " & ex.Message & vbCrLf & vbCrLf & ex.StackTrace,
+                          "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
     Private Sub GeneratePDF(filePath As String)
+        ' Validasi input
+        If String.IsNullOrEmpty(profileName) Then profileName = "Tidak Diketahui"
+        If String.IsNullOrEmpty(description) Then description = "Tidak ada deskripsi"
+
         ' 1. Buat dokumen PDF
         Dim doc As New Document(PageSize.A4, 50, 50, 25, 25)
 
@@ -75,7 +83,6 @@ Public Class formHasil
         doc.Open()
 
         ' ========== STYLING ==========
-        ' Font definitions
         Dim fontTitle As Font = FontFactory.GetFont("Arial", 18, Font.Bold, BaseColor.DARK_GRAY)
         Dim fontHeader As Font = FontFactory.GetFont("Arial", 14, Font.Bold, BaseColor.BLACK)
         Dim fontNormal As Font = FontFactory.GetFont("Arial", 11, Font.Bold, BaseColor.BLACK)
@@ -95,14 +102,16 @@ Public Class formHasil
         ' Garis pemisah
         Dim line As New LineSeparator(1.0F, 100.0F, BaseColor.GRAY, Element.ALIGN_CENTER, -1)
         doc.Add(New Chunk(line))
-        doc.Add(New Paragraph(" ")) ' Spacing
+        doc.Add(New Paragraph(" "))
 
         ' ========== INFORMASI UMUM ==========
         Dim tanggal As New Paragraph($"Tanggal: {DateTime.Now:dddd, dd MMMM yyyy HH:mm}", fontNormal)
         tanggal.SpacingAfter = 5
         doc.Add(tanggal)
 
-        Dim user As New Paragraph($"User: {moduleKoneksi.CurrentUserName}", fontNormal) ' Sesuaikan dengan sistem Anda
+        ' ✅ Cek apakah CurrentUserName ada
+        Dim userName As String = If(String.IsNullOrEmpty(moduleKoneksi.CurrentUserName), "Guest", moduleKoneksi.CurrentUserName)
+        Dim user As New Paragraph($"User: {userName}", fontNormal)
         user.SpacingAfter = 15
         doc.Add(user)
 
@@ -115,39 +124,29 @@ Public Class formHasil
         ' Tabel untuk hasil
         Dim table As New PdfPTable(2)
         table.WidthPercentage = 100
-        table.SetWidths(New Single() {1, 2}) ' Kolom 1 lebih kecil dari kolom 2
+        table.SetWidths(New Single() {1, 2})
         table.SpacingBefore = 10
         table.SpacingAfter = 20
 
-        ' Cell style
-        Dim cellLabel As New PdfPCell()
-        cellLabel.BackgroundColor = New BaseColor(230, 230, 230)
-        cellLabel.Padding = 8
-        cellLabel.VerticalAlignment = Element.ALIGN_MIDDLE
-
-        Dim cellContent As New PdfPCell()
-        cellContent.Padding = 8
-        cellContent.VerticalAlignment = Element.ALIGN_MIDDLE
-
         ' Row 1: Profil
-        cellLabel = New PdfPCell(New Phrase("PROFIL", fontBold))
-        cellLabel.BackgroundColor = New BaseColor(230, 230, 230)
-        cellLabel.Padding = 8
-        table.AddCell(cellLabel)
+        Dim cellLabel1 As New PdfPCell(New Phrase("PROFIL", fontBold))
+        cellLabel1.BackgroundColor = New BaseColor(230, 230, 230)
+        cellLabel1.Padding = 8
+        table.AddCell(cellLabel1)
 
-        cellContent = New PdfPCell(New Phrase(profileName, fontNormal))
-        cellContent.Padding = 8
-        table.AddCell(cellContent)
+        Dim cellContent1 As New PdfPCell(New Phrase(profileName, fontNormal))
+        cellContent1.Padding = 8
+        table.AddCell(cellContent1)
 
         ' Row 2: Tingkat Keyakinan
-        cellLabel = New PdfPCell(New Phrase("TINGKAT KEYAKINAN", fontBold))
-        cellLabel.BackgroundColor = New BaseColor(230, 230, 230)
-        cellLabel.Padding = 8
-        table.AddCell(cellLabel)
+        Dim cellLabel2 As New PdfPCell(New Phrase("TINGKAT KEYAKINAN", fontBold))
+        cellLabel2.BackgroundColor = New BaseColor(230, 230, 230)
+        cellLabel2.Padding = 8
+        table.AddCell(cellLabel2)
 
-        cellContent = New PdfPCell(New Phrase($"{(confidenceLv * 100).ToString("0.##")}%", fontNormal))
-        cellContent.Padding = 8
-        table.AddCell(cellContent)
+        Dim cellContent2 As New PdfPCell(New Phrase($"{(confidenceLv * 100).ToString("0.##")}%", fontNormal))
+        cellContent2.Padding = 8
+        table.AddCell(cellContent2)
 
         doc.Add(table)
 
@@ -159,11 +158,11 @@ Public Class formHasil
 
         Dim descContent As New Paragraph(description, fontNormal)
         descContent.Alignment = Element.ALIGN_JUSTIFIED
-        descContent.SetLeading(1.5F, 1.5F) ' Line spacing
+        descContent.SetLeading(0, 1.5F)
         doc.Add(descContent)
 
         ' ========== FOOTER ==========
-        doc.Add(New Paragraph(" ")) ' Spacing
+        doc.Add(New Paragraph(" "))
         doc.Add(New Chunk(line))
 
         Dim footer As New Paragraph("Dokumen ini digenerate otomatis oleh Sistem Pakar Profil Lulusan IT", fontNormal)
