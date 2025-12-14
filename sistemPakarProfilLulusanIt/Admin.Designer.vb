@@ -24,25 +24,23 @@ Partial Class Admin
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Admin))
         Panel1 = New Panel()
-        Label2 = New Label()
-        TextBox1 = New TextBox()
-        Label1 = New Label()
-        TextBox2 = New TextBox()
+        DataGridView2 = New DataGridView()
+        DataGridView1 = New DataGridView()
+        Button3 = New Button()
         Button2 = New Button()
         Button1 = New Button()
-        Button3 = New Button()
-        DataGridView1 = New DataGridView()
-        DataGridView2 = New DataGridView()
-        Button4 = New Button()
+        Label1 = New Label()
+        TextBox2 = New TextBox()
+        Label2 = New Label()
+        TextBox1 = New TextBox()
         Panel1.SuspendLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView2, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
         ' 
         Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
-        Panel1.Controls.Add(Button4)
         Panel1.Controls.Add(DataGridView2)
         Panel1.Controls.Add(DataGridView1)
         Panel1.Controls.Add(Button3)
@@ -57,43 +55,35 @@ Partial Class Admin
         Panel1.Size = New Size(804, 524)
         Panel1.TabIndex = 0
         ' 
-        ' Label2
+        ' DataGridView2
         ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.ForeColor = Color.White
-        Label2.Image = CType(resources.GetObject("Label2.Image"), Image)
-        Label2.Location = New Point(31, 51)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(80, 20)
-        Label2.TabIndex = 4
-        Label2.Text = "Username"
+        DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView2.Location = New Point(390, 12)
+        DataGridView2.Name = "DataGridView2"
+        DataGridView2.RowHeadersWidth = 51
+        DataGridView2.Size = New Size(393, 187)
+        DataGridView2.TabIndex = 25
         ' 
-        ' TextBox1
+        ' DataGridView1
         ' 
-        TextBox1.Location = New Point(31, 83)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(299, 27)
-        TextBox1.TabIndex = 3
+        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridView1.Location = New Point(11, 273)
+        DataGridView1.Name = "DataGridView1"
+        DataGridView1.RowHeadersWidth = 51
+        DataGridView1.Size = New Size(776, 238)
+        DataGridView1.TabIndex = 24
         ' 
-        ' Label1
+        ' Button3
         ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.White
-        Label1.Image = CType(resources.GetObject("Label1.Image"), Image)
-        Label1.Location = New Point(31, 129)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(76, 20)
-        Label1.TabIndex = 6
-        Label1.Text = "Password"
-        ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(31, 161)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(299, 27)
-        TextBox2.TabIndex = 5
+        Button3.BackColor = Color.Red
+        Button3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button3.ForeColor = Color.White
+        Button3.Location = New Point(266, 212)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(94, 37)
+        Button3.TabIndex = 23
+        Button3.Text = "Delete"
+        Button3.UseVisualStyleBackColor = False
         ' 
         ' Button2
         ' 
@@ -119,47 +109,43 @@ Partial Class Admin
         Button1.Text = "Update"
         Button1.UseVisualStyleBackColor = False
         ' 
-        ' Button3
+        ' Label1
         ' 
-        Button3.BackColor = Color.Red
-        Button3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button3.ForeColor = Color.White
-        Button3.Location = New Point(266, 212)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(94, 37)
-        Button3.TabIndex = 23
-        Button3.Text = "Delete"
-        Button3.UseVisualStyleBackColor = False
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.White
+        Label1.Image = CType(resources.GetObject("Label1.Image"), Image)
+        Label1.Location = New Point(31, 129)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(76, 20)
+        Label1.TabIndex = 6
+        Label1.Text = "Password"
         ' 
-        ' DataGridView1
+        ' TextBox2
         ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(11, 273)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(776, 238)
-        DataGridView1.TabIndex = 24
+        TextBox2.Location = New Point(31, 161)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(299, 27)
+        TextBox2.TabIndex = 5
         ' 
-        ' DataGridView2
+        ' Label2
         ' 
-        DataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView2.Location = New Point(390, 12)
-        DataGridView2.Name = "DataGridView2"
-        DataGridView2.RowHeadersWidth = 51
-        DataGridView2.Size = New Size(393, 187)
-        DataGridView2.TabIndex = 25
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.ForeColor = Color.White
+        Label2.Image = CType(resources.GetObject("Label2.Image"), Image)
+        Label2.Location = New Point(31, 51)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(80, 20)
+        Label2.TabIndex = 4
+        Label2.Text = "Username"
         ' 
-        ' Button4
+        ' TextBox1
         ' 
-        Button4.BackColor = Color.Red
-        Button4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button4.ForeColor = Color.White
-        Button4.Location = New Point(693, 237)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(94, 30)
-        Button4.TabIndex = 26
-        Button4.Text = "Print"
-        Button4.UseVisualStyleBackColor = False
+        TextBox1.Location = New Point(31, 83)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(299, 27)
+        TextBox1.TabIndex = 3
         ' 
         ' Admin
         ' 
@@ -171,8 +157,8 @@ Partial Class Admin
         Text = "Admin"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
+        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -186,5 +172,4 @@ Partial Class Admin
     Friend WithEvents Button1 As Button
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button4 As Button
 End Class
