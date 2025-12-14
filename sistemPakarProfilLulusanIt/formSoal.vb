@@ -227,15 +227,10 @@ Public Class formSoal
         End Using
 
         ' G. Tampilkan Hasil
-        MessageBox.Show($"Selamat! Berdasarkan analisis sistem pakar, profil lulusan yang paling cocok untuk Anda adalah:" & vbCrLf & vbCrLf &
-                        $"PROFIL: {namaProfil}" & vbCrLf &
-                        $"TINGKAT KEYAKINAN: {(bestCF * 100).ToString("0.##")}%" & vbCrLf & vbCrLf &
-                        $"Deskripsi: {deskripsi}", "HASIL DIAGNOSA", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Dim formHasil As New formHasil(namaProfil, bestCF, deskripsi)
+        formHasil.ShowDialog()
 
-        ' Opsional: Buka Form Hasil Detail
-        ' Dim frm As New FormHasil(bestProfileCode, bestCF)
-        ' frm.Show()
-        ' Me.Close()
+        Me.Close()
     End Sub
 
     Private Sub formSoal_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -24,17 +24,17 @@ Partial Class dashboard
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dashboard))
         Panel1 = New Panel()
-        Panel2 = New Panel()
-        Label1 = New Label()
-        TextBox1 = New TextBox()
-        TextBox2 = New TextBox()
-        Label2 = New Label()
-        Label3 = New Label()
-        Label4 = New Label()
-        TextBox3 = New TextBox()
+        Button1 = New Button()
         Label5 = New Label()
         TextBox4 = New TextBox()
-        Button1 = New Button()
+        Label4 = New Label()
+        TextBox3 = New TextBox()
+        Label3 = New Label()
+        Label2 = New Label()
+        TextBox2 = New TextBox()
+        TextBox1 = New TextBox()
+        Panel2 = New Panel()
+        Label1 = New Label()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         SuspendLayout()
@@ -51,87 +51,24 @@ Partial Class dashboard
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(TextBox2)
         Panel1.Controls.Add(TextBox1)
-        Panel1.Location = New Point(-2, 115)
+        Panel1.Location = New Point(-2, 86)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(803, 420)
+        Panel1.Size = New Size(703, 315)
         Panel1.TabIndex = 0
         ' 
-        ' Panel2
+        ' Button1
         ' 
-        Panel2.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(192))
-        Panel2.Controls.Add(Label1)
-        Panel2.Location = New Point(-2, -6)
-        Panel2.Name = "Panel2"
-        Panel2.Size = New Size(803, 121)
-        Panel2.TabIndex = 1
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.White
-        Label1.Location = New Point(187, 41)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(431, 38)
-        Label1.TabIndex = 0
-        Label1.Text = " Informasi Akademik dan Dasar"
-        ' 
-        ' TextBox1
-        ' 
-        TextBox1.Location = New Point(59, 86)
-        TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(378, 27)
-        TextBox1.TabIndex = 0
-        ' 
-        ' TextBox2
-        ' 
-        TextBox2.Location = New Point(59, 156)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(378, 27)
-        TextBox2.TabIndex = 1
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.ForeColor = Color.White
-        Label2.Image = CType(resources.GetObject("Label2.Image"), Image)
-        Label2.Location = New Point(59, 54)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(51, 20)
-        Label2.TabIndex = 2
-        Label2.Text = "Nama"
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.ForeColor = Color.White
-        Label3.Image = CType(resources.GetObject("Label3.Image"), Image)
-        Label3.Location = New Point(59, 133)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(40, 20)
-        Label3.TabIndex = 3
-        Label3.Text = "NIM"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = Color.White
-        Label4.Image = CType(resources.GetObject("Label4.Image"), Image)
-        Label4.Location = New Point(59, 201)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(128, 20)
-        Label4.TabIndex = 5
-        Label4.Text = "Semester saat ini"
-        ' 
-        ' TextBox3
-        ' 
-        TextBox3.Location = New Point(59, 224)
-        TextBox3.Name = "TextBox3"
-        TextBox3.Size = New Size(378, 27)
-        TextBox3.TabIndex = 4
+        Button1.BackColor = Color.LimeGreen
+        Button1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button1.ForeColor = Color.White
+        Button1.Location = New Point(52, 268)
+        Button1.Margin = New Padding(3, 2, 3, 2)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(155, 27)
+        Button1.TabIndex = 8
+        Button1.Text = "Mulai ke Pertanyaan"
+        Button1.UseVisualStyleBackColor = False
         ' 
         ' Label5
         ' 
@@ -139,38 +76,109 @@ Partial Class dashboard
         Label5.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label5.ForeColor = Color.White
         Label5.Image = CType(resources.GetObject("Label5.Image"), Image)
-        Label5.Location = New Point(59, 271)
+        Label5.Location = New Point(52, 203)
         Label5.Name = "Label5"
-        Label5.Size = New Size(110, 20)
+        Label5.Size = New Size(87, 15)
         Label5.TabIndex = 7
         Label5.Text = "Program Studi"
         ' 
         ' TextBox4
         ' 
-        TextBox4.Location = New Point(59, 294)
+        TextBox4.Location = New Point(52, 220)
+        TextBox4.Margin = New Padding(3, 2, 3, 2)
         TextBox4.Name = "TextBox4"
-        TextBox4.Size = New Size(378, 27)
+        TextBox4.Size = New Size(331, 23)
         TextBox4.TabIndex = 6
         ' 
-        ' Button1
+        ' Label4
         ' 
-        Button1.BackColor = Color.LimeGreen
-        Button1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button1.ForeColor = Color.White
-        Button1.Location = New Point(59, 358)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(177, 36)
-        Button1.TabIndex = 8
-        Button1.Text = "Mulai ke Pertanyaan"
-        Button1.UseVisualStyleBackColor = False
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.ForeColor = Color.White
+        Label4.Image = CType(resources.GetObject("Label4.Image"), Image)
+        Label4.Location = New Point(52, 151)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(102, 15)
+        Label4.TabIndex = 5
+        Label4.Text = "Semester saat ini"
+        ' 
+        ' TextBox3
+        ' 
+        TextBox3.Location = New Point(52, 168)
+        TextBox3.Margin = New Padding(3, 2, 3, 2)
+        TextBox3.Name = "TextBox3"
+        TextBox3.Size = New Size(331, 23)
+        TextBox3.TabIndex = 4
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.ForeColor = Color.White
+        Label3.Image = CType(resources.GetObject("Label3.Image"), Image)
+        Label3.Location = New Point(52, 100)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(31, 15)
+        Label3.TabIndex = 3
+        Label3.Text = "NIM"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.ForeColor = Color.White
+        Label2.Image = CType(resources.GetObject("Label2.Image"), Image)
+        Label2.Location = New Point(52, 40)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(39, 15)
+        Label2.TabIndex = 2
+        Label2.Text = "Nama"
+        ' 
+        ' TextBox2
+        ' 
+        TextBox2.Location = New Point(52, 117)
+        TextBox2.Margin = New Padding(3, 2, 3, 2)
+        TextBox2.Name = "TextBox2"
+        TextBox2.Size = New Size(331, 23)
+        TextBox2.TabIndex = 1
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Location = New Point(52, 64)
+        TextBox1.Margin = New Padding(3, 2, 3, 2)
+        TextBox1.Name = "TextBox1"
+        TextBox1.Size = New Size(331, 23)
+        TextBox1.TabIndex = 0
+        ' 
+        ' Panel2
+        ' 
+        Panel2.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(192))
+        Panel2.Controls.Add(Label1)
+        Panel2.Location = New Point(-2, -4)
+        Panel2.Margin = New Padding(3, 2, 3, 2)
+        Panel2.Name = "Panel2"
+        Panel2.Size = New Size(703, 91)
+        Panel2.TabIndex = 1
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.White
+        Label1.Location = New Point(164, 31)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(336, 30)
+        Label1.TabIndex = 0
+        Label1.Text = " Informasi Akademik dan Dasar"
         ' 
         ' dashboard
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 533)
+        ClientSize = New Size(700, 400)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "dashboard"
         Text = "dashboard"
         Panel1.ResumeLayout(False)
