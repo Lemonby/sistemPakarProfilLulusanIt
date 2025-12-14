@@ -24,7 +24,6 @@ Partial Class dashboard
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(dashboard))
         Panel1 = New Panel()
-        Button1 = New Button()
         Label5 = New Label()
         TextBox4 = New TextBox()
         Label4 = New Label()
@@ -37,6 +36,7 @@ Partial Class dashboard
         PictureBox1 = New PictureBox()
         PictureBox2 = New PictureBox()
         Label1 = New Label()
+        LinkLabel1 = New LinkLabel()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
@@ -46,7 +46,7 @@ Partial Class dashboard
         ' Panel1
         ' 
         Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
-        Panel1.Controls.Add(Button1)
+        Panel1.Controls.Add(LinkLabel1)
         Panel1.Controls.Add(Label5)
         Panel1.Controls.Add(TextBox4)
         Panel1.Controls.Add(Label4)
@@ -59,18 +59,6 @@ Partial Class dashboard
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(519, 424)
         Panel1.TabIndex = 0
-        ' 
-        ' Button1
-        ' 
-        Button1.BackColor = Color.LimeGreen
-        Button1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button1.ForeColor = Color.White
-        Button1.Location = New Point(59, 358)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(177, 36)
-        Button1.TabIndex = 8
-        Button1.Text = "Mulai ke Pertanyaan"
-        Button1.UseVisualStyleBackColor = False
         ' 
         ' Label5
         ' 
@@ -162,7 +150,7 @@ Partial Class dashboard
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(80, 67)
+        PictureBox1.Location = New Point(76, 67)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(137, 162)
         PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
@@ -172,7 +160,7 @@ Partial Class dashboard
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(202, 186)
+        PictureBox2.Location = New Point(198, 186)
         PictureBox2.Name = "PictureBox2"
         PictureBox2.Size = New Size(24, 27)
         PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
@@ -182,13 +170,26 @@ Partial Class dashboard
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.White
-        Label1.Location = New Point(202, 15)
+        Label1.Location = New Point(86, 274)
         Label1.Name = "Label1"
-        Label1.Size = New Size(76, 20)
+        Label1.Size = New Size(120, 31)
         Label1.TabIndex = 2
         Label1.Text = "Label Jam"
+        ' 
+        ' LinkLabel1
+        ' 
+        LinkLabel1.AutoSize = True
+        LinkLabel1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        LinkLabel1.Image = CType(resources.GetObject("LinkLabel1.Image"), Image)
+        LinkLabel1.LinkColor = Color.White
+        LinkLabel1.Location = New Point(322, 380)
+        LinkLabel1.Name = "LinkLabel1"
+        LinkLabel1.Size = New Size(169, 20)
+        LinkLabel1.TabIndex = 9
+        LinkLabel1.TabStop = True
+        LinkLabel1.Text = "Mulai ke Pertanyaan ->"
         ' 
         ' dashboard
         ' 
@@ -218,8 +219,8 @@ Partial Class dashboard
     Friend WithEvents Label4 As Label
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button1 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Label1 As Label
+    Friend WithEvents LinkLabel1 As LinkLabel
 End Class
