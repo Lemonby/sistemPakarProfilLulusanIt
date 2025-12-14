@@ -35,9 +35,12 @@ Partial Class dashboard
         txbUname = New TextBox()
         Panel2 = New Panel()
         PictureBox1 = New PictureBox()
+        PictureBox2 = New PictureBox()
+        Label5 = New Label()
         Panel1.SuspendLayout()
         Panel2.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel1
@@ -52,10 +55,9 @@ Partial Class dashboard
         Panel1.Controls.Add(txbPass)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(txbUname)
-        Panel1.Location = New Point(279, 0)
-        Panel1.Margin = New Padding(3, 2, 3, 2)
+        Panel1.Location = New Point(319, 0)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(521, 393)
+        Panel1.Size = New Size(595, 524)
         Panel1.TabIndex = 1
         ' 
         ' LinkLabel1
@@ -63,10 +65,13 @@ Partial Class dashboard
         LinkLabel1.ActiveLinkColor = Color.Aqua
         LinkLabel1.AutoSize = True
         LinkLabel1.BackColor = Color.DarkCyan
+        LinkLabel1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        LinkLabel1.ForeColor = Color.White
+        LinkLabel1.Image = CType(resources.GetObject("LinkLabel1.Image"), Image)
         LinkLabel1.LinkColor = Color.White
-        LinkLabel1.Location = New Point(386, 352)
+        LinkLabel1.Location = New Point(420, 463)
         LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(123, 15)
+        LinkLabel1.Size = New Size(159, 20)
         LinkLabel1.TabIndex = 11
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "Mulai Sistem Pakar ->"
@@ -78,18 +83,17 @@ Partial Class dashboard
         Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label4.ForeColor = Color.White
         Label4.Image = CType(resources.GetObject("Label4.Image"), Image)
-        Label4.Location = New Point(54, 222)
+        Label4.Location = New Point(62, 296)
         Label4.Name = "Label4"
-        Label4.Size = New Size(85, 15)
+        Label4.Size = New Size(109, 20)
         Label4.TabIndex = 10
         Label4.Text = "Program studi"
         ' 
         ' txbProdi
         ' 
-        txbProdi.Location = New Point(54, 246)
-        txbProdi.Margin = New Padding(3, 2, 3, 2)
+        txbProdi.Location = New Point(62, 328)
         txbProdi.Name = "txbProdi"
-        txbProdi.Size = New Size(409, 23)
+        txbProdi.Size = New Size(467, 27)
         txbProdi.TabIndex = 9
         ' 
         ' Label3
@@ -98,18 +102,17 @@ Partial Class dashboard
         Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = Color.White
         Label3.Image = CType(resources.GetObject("Label3.Image"), Image)
-        Label3.Location = New Point(54, 156)
+        Label3.Location = New Point(62, 208)
         Label3.Name = "Label3"
-        Label3.Size = New Size(28, 15)
+        Label3.Size = New Size(36, 20)
         Label3.TabIndex = 8
         Label3.Text = "nim"
         ' 
         ' txbNim
         ' 
-        txbNim.Location = New Point(54, 180)
-        txbNim.Margin = New Padding(3, 2, 3, 2)
+        txbNim.Location = New Point(62, 240)
         txbNim.Name = "txbNim"
-        txbNim.Size = New Size(409, 23)
+        txbNim.Size = New Size(467, 27)
         txbNim.TabIndex = 7
         ' 
         ' Label1
@@ -118,18 +121,17 @@ Partial Class dashboard
         Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.White
         Label1.Image = CType(resources.GetObject("Label1.Image"), Image)
-        Label1.Location = New Point(54, 93)
+        Label1.Location = New Point(62, 124)
         Label1.Name = "Label1"
-        Label1.Size = New Size(59, 15)
+        Label1.Size = New Size(76, 20)
         Label1.TabIndex = 6
         Label1.Text = "Password"
         ' 
         ' txbPass
         ' 
-        txbPass.Location = New Point(54, 117)
-        txbPass.Margin = New Padding(3, 2, 3, 2)
+        txbPass.Location = New Point(62, 156)
         txbPass.Name = "txbPass"
-        txbPass.Size = New Size(409, 23)
+        txbPass.Size = New Size(467, 27)
         txbPass.TabIndex = 5
         ' 
         ' Label2
@@ -138,53 +140,79 @@ Partial Class dashboard
         Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = Color.White
         Label2.Image = CType(resources.GetObject("Label2.Image"), Image)
-        Label2.Location = New Point(54, 34)
+        Label2.Location = New Point(62, 45)
         Label2.Name = "Label2"
-        Label2.Size = New Size(64, 15)
+        Label2.Size = New Size(80, 20)
         Label2.TabIndex = 4
         Label2.Text = "Username"
         ' 
         ' txbUname
         ' 
-        txbUname.Location = New Point(54, 58)
-        txbUname.Margin = New Padding(3, 2, 3, 2)
+        txbUname.Location = New Point(62, 77)
         txbUname.Name = "txbUname"
-        txbUname.Size = New Size(409, 23)
+        txbUname.Size = New Size(467, 27)
         txbUname.TabIndex = 3
         ' 
         ' Panel2
         ' 
         Panel2.BackColor = Color.Aqua
+        Panel2.Controls.Add(Label5)
+        Panel2.Controls.Add(PictureBox2)
         Panel2.Controls.Add(PictureBox1)
         Panel2.Location = New Point(1, 0)
-        Panel2.Margin = New Padding(3, 2, 3, 2)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(284, 393)
+        Panel2.Size = New Size(325, 524)
         Panel2.TabIndex = 7
         ' 
         ' PictureBox1
         ' 
-        PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), Image)
-        PictureBox1.Image = My.Resources.Resources.IMG_3539
-        PictureBox1.Location = New Point(71, 62)
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(84, 94)
+        PictureBox1.Margin = New Padding(3, 4, 3, 4)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(108, 98)
+        PictureBox1.Size = New Size(158, 145)
+        PictureBox1.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox1.TabIndex = 0
         PictureBox1.TabStop = False
         ' 
+        ' PictureBox2
+        ' 
+        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
+        PictureBox2.Location = New Point(220, 208)
+        PictureBox2.Margin = New Padding(3, 4, 3, 4)
+        PictureBox2.Name = "PictureBox2"
+        PictureBox2.Size = New Size(27, 27)
+        PictureBox2.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox2.TabIndex = 1
+        PictureBox2.TabStop = False
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Font = New Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label5.ForeColor = Color.White
+        Label5.Location = New Point(89, 296)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(147, 38)
+        Label5.TabIndex = 2
+        Label5.Text = "Label Jam"
+        ' 
         ' dashboard
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 389)
+        ClientSize = New Size(914, 519)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
+        Margin = New Padding(3, 4, 3, 4)
         Name = "dashboard"
         Text = "dashboard"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         Panel2.ResumeLayout(False)
+        Panel2.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -200,4 +228,6 @@ Partial Class dashboard
     Friend WithEvents txbProdi As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txbNim As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents PictureBox2 As PictureBox
 End Class
