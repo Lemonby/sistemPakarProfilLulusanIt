@@ -42,12 +42,12 @@ Public Class formSoal
             If conn Is Nothing Then Return
 
             ' A. Ambil Daftar Pertanyaan
-            Dim cmdQ As New MySqlCommand("SELECT * FROM tb_fakta ORDER BY kode_fakta ASC", conn)
+            Dim cmdQ As New MySqlCommand("SELECT * FROM tb_fakta ORDER BY kodeFakta ASC", conn)
             Using rd As MySqlDataReader = cmdQ.ExecuteReader()
                 AllQuestions.Clear()
                 While rd.Read()
                     AllQuestions.Add(New QuestionItem With {
-                        .Code = rd("kode_fakta").ToString(),
+                        .Code = rd("kodeFakta").ToString(),
                         .Text = rd("pertanyaan").ToString(),
                         .Category = rd("kategori").ToString()
                     })
@@ -58,13 +58,13 @@ Public Class formSoal
             TotalPages = Math.Ceiling(TotalQuestions / PageSize)
 
             ' B. Ambil Daftar Pilihan Jawaban (Bobot CF)
-            Dim cmdC As New MySqlCommand("SELECT * FROM tb_bobot_cf ORDER BY nilai_cf ASC", conn)
+            Dim cmdC As New MySqlCommand("SELECT * FROM tb_bobot_cf ORDER BY nilaiCf ASC", conn)
             Using rd As MySqlDataReader = cmdC.ExecuteReader()
                 AllChoices.Clear()
                 While rd.Read()
                     AllChoices.Add(New ChoiceItem With {
                         .Text = rd("keterangan").ToString(),
-                        .Value = Convert.ToDouble(rd("nilai_cf"))
+                        .Value = Convert.ToDouble(rd("nilaiCf"))
                     })
                 End While
             End Using
@@ -209,17 +209,17 @@ Public Class formSoal
         Dim deskripsi As String = ""
 
         Using conn As MySqlConnection = GetConnection()
-            Dim cmd As New MySqlCommand("SELECT * FROM tb_profil WHERE kode_profil=@code", conn)
+            Dim cmd As New MySqlCommand("SELECT * FROM tb_profil WHERE kodeProfile=@code", conn)
             cmd.Parameters.AddWithValue("@code", bestProfileCode)
             Using rd As MySqlDataReader = cmd.ExecuteReader()
                 If rd.Read() Then
-                    namaProfil = rd("nama_profil").ToString()
+                    namaProfil = rd("namaProfile").ToString()
                     deskripsi = rd("deskripsi").ToString()
                 End If
             End Using
 
             ' F. Simpan ke Database (tb_konsultasi)
-            Dim saveCmd As New MySqlCommand("INSERT INTO tb_konsultasi (id_user, hasil_kode_profil, hasil_nilai_cf) VALUES (@uid, @res, @cf)", conn)
+            Dim saveCmd As New MySqlCommand("INSERT INTO tb_konsultasi (userId, hasilKodeProfile, hasilNilaiCf) VALUES (@uid, @res, @cf)", conn)
             saveCmd.Parameters.AddWithValue("@uid", moduleKoneksi.CurrentUserID)
             saveCmd.Parameters.AddWithValue("@res", bestProfileCode)
             saveCmd.Parameters.AddWithValue("@cf", bestCF)
@@ -231,10 +231,6 @@ Public Class formSoal
         formHasil.ShowDialog()
 
         Me.Close()
-    End Sub
-
-    Private Sub formSoal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub PanelSoal_Paint(sender As Object, e As PaintEventArgs) Handles PanelSoal.Paint

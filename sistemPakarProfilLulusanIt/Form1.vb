@@ -17,24 +17,51 @@ Public Class formLogin
             If conn Is Nothing Then Return
 
             Try
-                ' Cek username dan password di database
-                Dim query As String = "SELECT id_user, nama_lengkap, role FROM tb_users WHERE username=@user AND password=@pass"
+                ' ✅ Hash password menggunakan function global dari moduleKoneksi
+                Dim hashedPassword As String = moduleKoneksi.HashPassword(password)
+
+                Dim query As String = "SELECT userId, password, namaLengkap, nim, prodi, role 
+                      FROM tb_users 
+                      WHERE username=@user AND password=@pass"
                 Dim cmd As New MySqlCommand(query, conn)
                 cmd.Parameters.AddWithValue("@user", username)
-                cmd.Parameters.AddWithValue("@pass", password) ' Note: Sebaiknya gunakan Hash di real project
+                cmd.Parameters.AddWithValue("@pass", hashedPassword) ' Note: Sebaiknya gunakan Hash di real project
 
                 Using rd As MySqlDataReader = cmd.ExecuteReader()
                     If rd.Read() Then
                         ' 1. SIMPAN SESI USER KE MODULE GLOBAL
-                        moduleKoneksi.CurrentUserID = Convert.ToInt32(rd("id_user"))
-                        moduleKoneksi.CurrentUserName = rd("nama_lengkap").ToString()
+                        moduleKoneksi.CurrentUserID = Convert.ToInt32(rd("userId"))
+                        moduleKoneksi.CurrentUserName = rd("namaLengkap").ToString()
+                        moduleKoneksi.CurrentPass = rd("password").ToString()
+                        moduleKoneksi.CurrentUserRole = rd("role").ToString()
+                        moduleKoneksi.CurrentNim = rd("nim").ToString()
+                        moduleKoneksi.CurrentProdi = rd("prodi").ToString()
 
-                        MessageBox.Show("Login Berhasil! Selamat Datang, " & moduleKoneksi.CurrentUserName, "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                        ' 2. PINDAH KE FORM UTAMA (FORM3)
-                        Dim formSoal As New formSoal()
-                        formSoal.Show()
-                        Me.Hide() ' Sembunyikan form login
+                        ' ✅ 2. REDIRECT BERDASARKAN ROLE
+                        Select Case moduleKoneksi.CurrentUserRole.ToLower()
+                            Case "admin"
+                                ' Jika Admin → Buka Admin.vb
+                                MessageBox.Show("Login Berhasil! Selamat Datang Admin, " & moduleKoneksi.CurrentUserName,
+                                              "Admin Panel", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                                Dim adminForm As New adminForm()
+                                adminForm.Show()
+                                Me.Hide()
+
+                            Case "user", "mahasiswa"
+                                ' Jika User/Mahasiswa → Buka formSoal
+                                MessageBox.Show("Login Berhasil! Selamat Datang, " & moduleKoneksi.CurrentUserName,
+                                              "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+                                Dim dashboard As New dashboard()
+                                dashboard.Show()
+                                Me.Hide()
+
+                            Case Else
+                                ' Role tidak dikenali
+                                MessageBox.Show("Role user tidak valid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                        End Select
                     Else
                         MessageBox.Show("Username atau Password salah!", "Login Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     End If
