@@ -24,17 +24,17 @@ Public Class ExpertSystemEngine
             Using rd As MySqlDataReader = cmd.ExecuteReader()
                 While rd.Read()
                     Rules.Add(New Rule With {
-                        .Code = rd("kode_rule").ToString(),
+                        .Code = rd("kodeRule").ToString(),
                         .Antecedent = rd("antecedent").ToString(),
                         .Consequent = rd("consequent").ToString(),
-                        .CFPakar = Convert.ToDouble(rd("cf_pakar"))
+                        .CFPakar = Convert.ToDouble(rd("cfPakar"))
                     })
                 End While
             End Using
         End Using
     End Sub
 
-    ' 2. Set Jawaban User
+    ' 2. Set Jawaban User ke directory UserFacts
     Public Sub SetUserFact(factCode As String, cfValue As Double)
         If UserFacts.ContainsKey(factCode) Then
             UserFacts(factCode) = cfValue
@@ -49,7 +49,7 @@ Public Class ExpertSystemEngine
 
         For Each r In Rules
             ' Hitung CF Premis (Bagian IF)
-            Dim cfPremise As Double = EvaluateAntecedent(r.Antecedent)
+            Dim cfPremise As Double = EvaluateAntecedent(r.Antecedent) 
 
             ' Jika premis terpenuhi (CF > 0)
             If cfPremise > 0 Then
@@ -80,7 +80,7 @@ Public Class ExpertSystemEngine
             ' Regex untuk mengambil isi kurung terdalam
             Dim match As Match = Regex.Match(expr, "\(([^()]+)\)")
             If match.Success Then
-                Dim innerResult As Double = EvaluateSimpleLogic(match.Groups(1).Value)
+                Dim innerResult As Double = EvaluateSimpleLogic(match.Groups(1).Value) 'match.Group(1): isi dalam kurung, ga ada kurung lagi 
                 ' Ganti (A OR B) dengan nilai hasilnya
                 expr = expr.Replace(match.Value, innerResult.ToString(System.Globalization.CultureInfo.InvariantCulture))
             End If

@@ -223,27 +223,4 @@ Public Class formRegister
         End If
     End Sub
 
-    ' ===== Event Handlers =====
-
-    Private Sub txbNama_TextChanged(sender As Object, e As EventArgs) Handles txbNama.TextChanged
-        ' Opsional: Validasi real-time
-    End Sub
-
-    Private Sub txbUserName_TextChanged(sender As Object, e As EventArgs) Handles txbUserName.TextChanged
-        ' Opsional: Cek username availability real-time
-    End Sub
-
-    Private Sub txbPassword_TextChanged(sender As Object, e As EventArgs) Handles txbPassword.TextChanged
-        ' Opsional: Password strength indicator
-    End Sub
-
-    Private Sub cbProdi_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbProdi.SelectedIndexChanged
-        ' Opsional: Action saat prodi dipilih
-    End Sub
-
-    Private Sub cbRole_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbRole.SelectedIndexChanged
-        ' ✅ OPSIONAL: Tampilkan info role yang dipilih
-        ' Atau disable/enable field tertentu based on role
-    End Sub
-
 End Class
