@@ -16,17 +16,14 @@ Public Class dashboard
 
     Private Sub LoadUserData()
         txbUname.Text = moduleKoneksi.CurrentUserName
-        txbPass.Text = moduleKoneksi.CurrentPass
         txbNim.Text = moduleKoneksi.CurrentNim
         txbProdi.Text = moduleKoneksi.CurrentProdi
 
         txbUname.ReadOnly = True
-        txbPass.ReadOnly = True
         txbNim.ReadOnly = True
         txbProdi.ReadOnly = True
 
         txbUname.BackColor = Color.WhiteSmoke
-        txbPass.BackColor = Color.WhiteSmoke
         txbNim.BackColor = Color.WhiteSmoke
         txbProdi.BackColor = Color.WhiteSmoke
 

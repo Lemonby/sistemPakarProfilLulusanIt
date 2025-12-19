@@ -90,11 +90,11 @@ Public Class adminForm
                     txbUname.Clear()
                 End If
 
-                If row.Cells("password").Value IsNot Nothing Then
-                    txbPass.Text = row.Cells("password").Value.ToString()
-                Else
-                    txbPass.Clear()
-                End If
+                'If row.Cells("password").Value IsNot Nothing Then
+                '    txbPass.Text = row.Cells("password").Value.ToString()
+                'Else
+                '    txbPass.Clear()
+                'End If
 
             Catch ex As Exception
                 MessageBox.Show("Error mengambil data: " & ex.Message & vbCrLf & ex.StackTrace,
@@ -108,7 +108,7 @@ Public Class adminForm
         tampilDataUser()
         tampilDataProfilLulusan()
         txbUname.Clear()
-        txbPass.Clear()
+        'txbPass.Clear()
     End Sub
 
     ' ========== BUTTON UPDATE ==========
@@ -120,10 +120,10 @@ Public Class adminForm
         End If
 
         ' Validasi: Pastikan TextBox tidak kosong
-        If String.IsNullOrWhiteSpace(txbUname.Text) Or String.IsNullOrWhiteSpace(txbPass.Text) Then
-            MessageBox.Show("Username dan Password tidak boleh kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
+        'If String.IsNullOrWhiteSpace(txbUname.Text) Or String.IsNullOrWhiteSpace(txbPass.Text) Then
+        '    MessageBox.Show("Username dan Password tidak boleh kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        '    Return
+        'End If
 
         ' Konfirmasi update
         Dim result As DialogResult = MessageBox.Show(
@@ -141,10 +141,10 @@ Public Class adminForm
 
             Try
                 ' ✅ Update berdasarkan ID (lebih aman dari pada WHERE username)
-                Dim query As String = "UPDATE tb_users SET username=@username, password=@password WHERE userId=@id"
+                Dim query As String = "UPDATE tb_users SET username=@username WHERE userId=@id"
                 Dim cmd As New MySqlCommand(query, conn)
                 cmd.Parameters.AddWithValue("@username", txbUname.Text.Trim())
-                cmd.Parameters.AddWithValue("@password", txbPass.Text.Trim())
+                'cmd.Parameters.AddWithValue("@password", txbPass.Text.Trim())
                 cmd.Parameters.AddWithValue("@id", selectedUserId)
 
                 Dim rowsAffected As Integer = cmd.ExecuteNonQuery()
@@ -158,7 +158,7 @@ Public Class adminForm
 
                     ' Clear selection
                     txbUname.Clear()
-                    txbPass.Clear()
+                    'txbPass.Clear()
                     selectedUserId = 0
                 Else
                     MessageBox.Show("Data tidak ditemukan atau tidak ada perubahan!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -233,7 +233,7 @@ Public Class adminForm
 
                         ' Clear selection
                         txbUname.Clear()
-                        txbPass.Clear()
+                        'txbPass.Clear()
                         selectedUserId = 0
                     Else
                         transaction.Rollback()

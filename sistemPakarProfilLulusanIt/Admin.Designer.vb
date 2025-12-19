@@ -29,8 +29,6 @@ Partial Class adminForm
         btnDelate = New Button()
         btnSimpan = New Button()
         btnUpdate = New Button()
-        Label1 = New Label()
-        txbPass = New TextBox()
         Label2 = New Label()
         txbUname = New TextBox()
         Panel1.SuspendLayout()
@@ -46,8 +44,6 @@ Partial Class adminForm
         Panel1.Controls.Add(btnDelate)
         Panel1.Controls.Add(btnSimpan)
         Panel1.Controls.Add(btnUpdate)
-        Panel1.Controls.Add(Label1)
-        Panel1.Controls.Add(txbPass)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(txbUname)
         Panel1.Location = New Point(1, 0)
@@ -115,26 +111,6 @@ Partial Class adminForm
         btnUpdate.Text = "Update"
         btnUpdate.UseVisualStyleBackColor = False
         ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.White
-        Label1.Image = CType(resources.GetObject("Label1.Image"), Image)
-        Label1.Location = New Point(27, 97)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(59, 15)
-        Label1.TabIndex = 6
-        Label1.Text = "Password"
-        ' 
-        ' txbPass
-        ' 
-        txbPass.Location = New Point(27, 121)
-        txbPass.Margin = New Padding(3, 2, 3, 2)
-        txbPass.Name = "txbPass"
-        txbPass.Size = New Size(262, 23)
-        txbPass.TabIndex = 5
-        ' 
         ' Label2
         ' 
         Label2.AutoSize = True
@@ -163,7 +139,7 @@ Partial Class adminForm
         Controls.Add(Panel1)
         Margin = New Padding(3, 2, 3, 2)
         Name = "adminForm"
-        Text = "Admin"
+        Text = "Admin Dashboard"
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(DataGridView2, ComponentModel.ISupportInitialize).EndInit()
@@ -172,8 +148,6 @@ Partial Class adminForm
     End Sub
 
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Label1 As Label
-    Friend WithEvents txbPass As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents txbUname As TextBox
     Friend WithEvents Button3 As Button
