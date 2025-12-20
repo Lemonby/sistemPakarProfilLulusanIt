@@ -47,24 +47,27 @@ Partial Class formLogin
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(192))
+        Panel1.BackColor = Color.MediumPurple
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Label6)
         Panel1.Controls.Add(Label5)
         Panel1.Controls.Add(PictureBox3)
         Panel1.Controls.Add(PictureBox2)
+        Panel1.Dock = DockStyle.Left
         Panel1.Location = New Point(0, 0)
+        Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(392, 456)
+        Panel1.Size = New Size(343, 548)
         Panel1.TabIndex = 1
         ' 
         ' PictureBox1
         ' 
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.InitialImage = My.Resources.Resources.IMG_3539
-        PictureBox1.Location = New Point(55, 0)
+        PictureBox1.Location = New Point(48, 0)
+        PictureBox1.Margin = New Padding(3, 2, 3, 2)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(267, 251)
+        PictureBox1.Size = New Size(234, 188)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 2
         PictureBox1.TabStop = False
@@ -74,9 +77,9 @@ Partial Class formLogin
         Label6.AutoSize = True
         Label6.Font = New Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label6.ForeColor = Color.White
-        Label6.Location = New Point(103, 296)
+        Label6.Location = New Point(90, 222)
         Label6.Name = "Label6"
-        Label6.Size = New Size(171, 23)
+        Label6.Size = New Size(141, 19)
         Label6.TabIndex = 1
         Label6.Text = "(Profile Expert for IT)"
         ' 
@@ -85,18 +88,19 @@ Partial Class formLogin
         Label5.AutoSize = True
         Label5.Font = New Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label5.ForeColor = Color.White
-        Label5.Location = New Point(34, 253)
+        Label5.Location = New Point(30, 190)
         Label5.Name = "Label5"
-        Label5.Size = New Size(326, 41)
+        Label5.Size = New Size(265, 32)
         Label5.TabIndex = 1
         Label5.Text = "Wellcome To ProEx-IT"
         ' 
         ' PictureBox3
         ' 
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(-87, -71)
+        PictureBox3.Location = New Point(-76, -53)
+        PictureBox3.Margin = New Padding(3, 2, 3, 2)
         PictureBox3.Name = "PictureBox3"
-        PictureBox3.Size = New Size(147, 536)
+        PictureBox3.Size = New Size(129, 402)
         PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox3.TabIndex = 2
         PictureBox3.TabStop = False
@@ -104,9 +108,10 @@ Partial Class formLogin
         ' PictureBox2
         ' 
         PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(280, 221)
+        PictureBox2.Location = New Point(224, 260)
+        PictureBox2.Margin = New Padding(3, 2, 3, 2)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(149, 384)
+        PictureBox2.Size = New Size(130, 288)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox2.TabIndex = 2
         PictureBox2.TabStop = False
@@ -114,12 +119,13 @@ Partial Class formLogin
         ' LinkLabel1
         ' 
         LinkLabel1.AutoSize = True
+        LinkLabel1.BackColor = Color.Plum
         LinkLabel1.Font = New Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        LinkLabel1.Image = CType(resources.GetObject("LinkLabel1.Image"), Image)
+        LinkLabel1.ForeColor = SystemColors.ActiveCaptionText
         LinkLabel1.LinkColor = Color.White
-        LinkLabel1.Location = New Point(236, 390)
+        LinkLabel1.Location = New Point(533, 526)
         LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(58, 17)
+        LinkLabel1.Size = New Size(49, 13)
         LinkLabel1.TabIndex = 14
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "Register"
@@ -128,22 +134,22 @@ Partial Class formLogin
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = Color.Transparent
-        Label4.Image = CType(resources.GetObject("Label4.Image"), Image)
-        Label4.Location = New Point(94, 390)
+        Label4.ForeColor = Color.Black
+        Label4.Location = New Point(390, 526)
         Label4.Name = "Label4"
-        Label4.Size = New Size(137, 17)
+        Label4.Size = New Size(123, 13)
         Label4.TabIndex = 13
         Label4.Text = "Belum punya account?"
         ' 
         ' BtnLogin
         ' 
-        BtnLogin.BackColor = Color.LimeGreen
+        BtnLogin.BackColor = Color.Plum
         BtnLogin.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         BtnLogin.ForeColor = Color.White
-        BtnLogin.Location = New Point(135, 327)
+        BtnLogin.Location = New Point(215, 255)
+        BtnLogin.Margin = New Padding(3, 2, 3, 2)
         BtnLogin.Name = "BtnLogin"
-        BtnLogin.Size = New Size(94, 37)
+        BtnLogin.Size = New Size(150, 28)
         BtnLogin.TabIndex = 12
         BtnLogin.Text = "Login"
         BtnLogin.UseVisualStyleBackColor = False
@@ -152,11 +158,10 @@ Partial Class formLogin
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.ForeColor = Color.Transparent
-        Label3.Image = CType(resources.GetObject("Label3.Image"), Image)
-        Label3.Location = New Point(57, 247)
+        Label3.ForeColor = Color.MediumPurple
+        Label3.Location = New Point(50, 185)
         Label3.Name = "Label3"
-        Label3.Size = New Size(73, 20)
+        Label3.Size = New Size(57, 15)
         Label3.TabIndex = 10
         Label3.Text = "Password"
         ' 
@@ -164,43 +169,44 @@ Partial Class formLogin
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.ForeColor = Color.Transparent
-        Label2.Image = CType(resources.GetObject("Label2.Image"), Image)
-        Label2.Location = New Point(57, 167)
+        Label2.ForeColor = Color.MediumPurple
+        Label2.Location = New Point(50, 125)
         Label2.Name = "Label2"
-        Label2.Size = New Size(78, 20)
+        Label2.Size = New Size(60, 15)
         Label2.TabIndex = 11
         Label2.Text = "Username"
         ' 
         ' TxtPassword
         ' 
-        TxtPassword.Location = New Point(57, 270)
+        TxtPassword.Location = New Point(50, 202)
+        TxtPassword.Margin = New Padding(3, 2, 3, 2)
         TxtPassword.Name = "TxtPassword"
-        TxtPassword.Size = New Size(250, 27)
+        TxtPassword.Size = New Size(532, 23)
         TxtPassword.TabIndex = 8
         ' 
         ' TxtUsername
         ' 
-        TxtUsername.Location = New Point(57, 191)
+        TxtUsername.Location = New Point(50, 143)
+        TxtUsername.Margin = New Padding(3, 2, 3, 2)
         TxtUsername.Name = "TxtUsername"
-        TxtUsername.Size = New Size(250, 27)
+        TxtUsername.Size = New Size(532, 23)
         TxtUsername.TabIndex = 9
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.GhostWhite
         Label1.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.Transparent
-        Label1.Image = CType(resources.GetObject("Label1.Image"), Image)
-        Label1.Location = New Point(118, 75)
+        Label1.ForeColor = Color.MediumPurple
+        Label1.Location = New Point(261, 57)
         Label1.Name = "Label1"
-        Label1.Size = New Size(127, 54)
+        Label1.Size = New Size(104, 45)
         Label1.TabIndex = 7
         Label1.Text = "Login"
         ' 
         ' Panel2
         ' 
-        Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), Image)
+        Panel2.BackColor = Color.GhostWhite
         Panel2.Controls.Add(LinkLabel1)
         Panel2.Controls.Add(Label4)
         Panel2.Controls.Add(BtnLogin)
@@ -209,19 +215,20 @@ Partial Class formLogin
         Panel2.Controls.Add(TxtPassword)
         Panel2.Controls.Add(TxtUsername)
         Panel2.Controls.Add(Label1)
-        Panel2.Location = New Point(391, 0)
+        Panel2.Dock = DockStyle.Fill
+        Panel2.Location = New Point(343, 0)
+        Panel2.Margin = New Padding(3, 2, 3, 2)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(356, 453)
+        Panel2.Size = New Size(594, 548)
         Panel2.TabIndex = 15
         ' 
         ' formLogin
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(745, 453)
+        ClientSize = New Size(937, 548)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
-        Margin = New Padding(3, 4, 3, 4)
         Name = "formLogin"
         Text = "Form1"
         Panel1.ResumeLayout(False)

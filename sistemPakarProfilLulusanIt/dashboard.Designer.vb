@@ -43,7 +43,6 @@ Partial Class dashboard
         ' 
         ' Panel1
         ' 
-        Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), Image)
         Panel1.Controls.Add(LinkLabel1)
         Panel1.Controls.Add(Label4)
         Panel1.Controls.Add(txbProdi)
@@ -51,22 +50,22 @@ Partial Class dashboard
         Panel1.Controls.Add(txbNim)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(txbUname)
-        Panel1.Location = New Point(279, 0)
+        Panel1.Dock = DockStyle.Right
+        Panel1.Location = New Point(281, 0)
         Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(521, 393)
+        Panel1.Size = New Size(755, 689)
         Panel1.TabIndex = 1
         ' 
         ' LinkLabel1
         ' 
         LinkLabel1.ActiveLinkColor = Color.Aqua
         LinkLabel1.AutoSize = True
-        LinkLabel1.BackColor = Color.DarkCyan
+        LinkLabel1.BackColor = Color.Plum
         LinkLabel1.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         LinkLabel1.ForeColor = Color.White
-        LinkLabel1.Image = CType(resources.GetObject("LinkLabel1.Image"), Image)
         LinkLabel1.LinkColor = Color.White
-        LinkLabel1.Location = New Point(368, 347)
+        LinkLabel1.Location = New Point(619, 665)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(124, 15)
         LinkLabel1.TabIndex = 11
@@ -78,8 +77,7 @@ Partial Class dashboard
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = Color.White
-        Label4.Image = CType(resources.GetObject("Label4.Image"), Image)
+        Label4.ForeColor = Color.MediumPurple
         Label4.Location = New Point(54, 162)
         Label4.Name = "Label4"
         Label4.Size = New Size(85, 15)
@@ -98,8 +96,7 @@ Partial Class dashboard
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label3.ForeColor = Color.White
-        Label3.Image = CType(resources.GetObject("Label3.Image"), Image)
+        Label3.ForeColor = Color.MediumPurple
         Label3.Location = New Point(54, 96)
         Label3.Name = "Label3"
         Label3.Size = New Size(28, 15)
@@ -118,8 +115,7 @@ Partial Class dashboard
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.ForeColor = Color.White
-        Label2.Image = CType(resources.GetObject("Label2.Image"), Image)
+        Label2.ForeColor = Color.MediumPurple
         Label2.Location = New Point(54, 34)
         Label2.Name = "Label2"
         Label2.Size = New Size(64, 15)
@@ -136,14 +132,15 @@ Partial Class dashboard
         ' 
         ' Panel2
         ' 
-        Panel2.BackColor = Color.Aqua
+        Panel2.BackColor = Color.MediumPurple
         Panel2.Controls.Add(Label5)
         Panel2.Controls.Add(PictureBox2)
         Panel2.Controls.Add(PictureBox1)
-        Panel2.Location = New Point(1, 0)
+        Panel2.Dock = DockStyle.Left
+        Panel2.Location = New Point(0, 0)
         Panel2.Margin = New Padding(3, 2, 3, 2)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(284, 393)
+        Panel2.Size = New Size(284, 689)
         Panel2.TabIndex = 7
         ' 
         ' Label5
@@ -181,7 +178,7 @@ Partial Class dashboard
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 389)
+        ClientSize = New Size(1036, 689)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         Name = "dashboard"

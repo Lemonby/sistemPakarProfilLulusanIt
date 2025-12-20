@@ -259,8 +259,6 @@ Public Class adminForm
     '    DataGridView2.ClearSelection()
     'End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        ' Event handler kosong (bisa dihapus jika tidak digunakan)
-    End Sub
+
 
 End Class

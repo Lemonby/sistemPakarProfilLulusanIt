@@ -32,19 +32,20 @@ Partial Class formRegister
         Button2 = New Button()
         Button1 = New Button()
         Label3 = New Label()
-        Label2 = New Label()
         txbPassword = New TextBox()
         txbUserName = New TextBox()
         Label1 = New Label()
         Panel2 = New Panel()
-        Label8 = New Label()
+        cbRole = New ComboBox()
         txbNim = New TextBox()
         Label7 = New Label()
         txbNama = New TextBox()
         cbProdi = New ComboBox()
-        Label4 = New Label()
-        cbRole = New ComboBox()
-        Label9 = New Label()
+        Label10 = New Label()
+        Label11 = New Label()
+        Label12 = New Label()
+        Label13 = New Label()
+        Label14 = New Label()
         Panel1.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
@@ -54,16 +55,17 @@ Partial Class formRegister
         ' 
         ' Panel1
         ' 
-        Panel1.BackColor = Color.FromArgb(CByte(0), CByte(192), CByte(192))
+        Panel1.BackColor = Color.MediumPurple
         Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Label6)
         Panel1.Controls.Add(Label5)
         Panel1.Controls.Add(PictureBox3)
         Panel1.Controls.Add(PictureBox2)
-        Panel1.Location = New Point(2, -2)
+        Panel1.Dock = DockStyle.Left
+        Panel1.Location = New Point(0, 0)
         Panel1.Margin = New Padding(3, 2, 3, 2)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(345, 558)
+        Panel1.Size = New Size(345, 554)
         Panel1.TabIndex = 8
         ' 
         ' PictureBox1
@@ -123,13 +125,13 @@ Partial Class formRegister
         ' 
         ' Button2
         ' 
-        Button2.BackColor = Color.DodgerBlue
+        Button2.BackColor = Color.Plum
         Button2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button2.ForeColor = Color.White
-        Button2.Location = New Point(78, 463)
+        Button2.Location = New Point(140, 463)
         Button2.Margin = New Padding(3, 2, 3, 2)
         Button2.Name = "Button2"
-        Button2.Size = New Size(82, 28)
+        Button2.Size = New Size(150, 28)
         Button2.TabIndex = 19
         Button2.Text = "Kembali"
         Button2.UseVisualStyleBackColor = False
@@ -139,10 +141,10 @@ Partial Class formRegister
         Button1.BackColor = Color.LimeGreen
         Button1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Button1.ForeColor = Color.White
-        Button1.Location = New Point(182, 463)
+        Button1.Location = New Point(308, 463)
         Button1.Margin = New Padding(3, 2, 3, 2)
         Button1.Name = "Button1"
-        Button1.Size = New Size(82, 28)
+        Button1.Size = New Size(150, 28)
         Button1.TabIndex = 20
         Button1.Text = "Register"
         Button1.UseVisualStyleBackColor = False
@@ -155,28 +157,15 @@ Partial Class formRegister
         Label3.Image = CType(resources.GetObject("Label3.Image"), Image)
         Label3.Location = New Point(63, 290)
         Label3.Name = "Label3"
-        Label3.Size = New Size(57, 15)
+        Label3.Size = New Size(0, 15)
         Label3.TabIndex = 17
-        Label3.Text = "Password"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.ForeColor = Color.Transparent
-        Label2.Image = CType(resources.GetObject("Label2.Image"), Image)
-        Label2.Location = New Point(63, 235)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(60, 15)
-        Label2.TabIndex = 18
-        Label2.Text = "Username"
         ' 
         ' txbPassword
         ' 
         txbPassword.Location = New Point(63, 308)
         txbPassword.Margin = New Padding(3, 2, 3, 2)
         txbPassword.Name = "txbPassword"
-        txbPassword.Size = New Size(219, 23)
+        txbPassword.Size = New Size(512, 23)
         txbPassword.TabIndex = 15
         ' 
         ' txbUserName
@@ -184,17 +173,16 @@ Partial Class formRegister
         txbUserName.Location = New Point(63, 253)
         txbUserName.Margin = New Padding(3, 2, 3, 2)
         txbUserName.Name = "txbUserName"
-        txbUserName.Size = New Size(219, 23)
+        txbUserName.Size = New Size(512, 23)
         txbUserName.TabIndex = 16
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.BackColor = SystemColors.ControlLightLight
+        Label1.BackColor = Color.GhostWhite
         Label1.Font = New Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.Transparent
-        Label1.Image = CType(resources.GetObject("Label1.Image"), Image)
-        Label1.Location = New Point(93, 56)
+        Label1.ForeColor = Color.MediumPurple
+        Label1.Location = New Point(236, 62)
         Label1.Name = "Label1"
         Label1.Size = New Size(142, 45)
         Label1.TabIndex = 14
@@ -202,54 +190,52 @@ Partial Class formRegister
         ' 
         ' Panel2
         ' 
-        Panel2.BackgroundImage = CType(resources.GetObject("Panel2.BackgroundImage"), Image)
+        Panel2.BackColor = Color.GhostWhite
+        Panel2.Controls.Add(Label14)
+        Panel2.Controls.Add(Label13)
+        Panel2.Controls.Add(Label12)
+        Panel2.Controls.Add(Label11)
+        Panel2.Controls.Add(Label10)
         Panel2.Controls.Add(cbRole)
-        Panel2.Controls.Add(Label9)
-        Panel2.Controls.Add(Label8)
         Panel2.Controls.Add(txbNim)
         Panel2.Controls.Add(Label7)
         Panel2.Controls.Add(txbNama)
         Panel2.Controls.Add(cbProdi)
-        Panel2.Controls.Add(Label4)
         Panel2.Controls.Add(Button2)
         Panel2.Controls.Add(Button1)
         Panel2.Controls.Add(Label3)
-        Panel2.Controls.Add(Label2)
         Panel2.Controls.Add(txbPassword)
         Panel2.Controls.Add(txbUserName)
         Panel2.Controls.Add(Label1)
+        Panel2.Dock = DockStyle.Right
         Panel2.Location = New Point(345, 0)
         Panel2.Margin = New Padding(3, 2, 3, 2)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(340, 554)
+        Panel2.Size = New Size(587, 554)
         Panel2.TabIndex = 21
         ' 
-        ' Label8
+        ' cbRole
         ' 
-        Label8.AutoSize = True
-        Label8.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label8.ForeColor = Color.Transparent
-        Label8.Image = CType(resources.GetObject("Label8.Image"), Image)
-        Label8.Location = New Point(63, 181)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(31, 15)
-        Label8.TabIndex = 27
-        Label8.Text = "NIM"
+        cbRole.FormattingEnabled = True
+        cbRole.Items.AddRange(New Object() {"mahasiswa", "admin"})
+        cbRole.Location = New Point(63, 420)
+        cbRole.Name = "cbRole"
+        cbRole.Size = New Size(512, 23)
+        cbRole.TabIndex = 29
         ' 
         ' txbNim
         ' 
         txbNim.Location = New Point(63, 199)
         txbNim.Margin = New Padding(3, 2, 3, 2)
         txbNim.Name = "txbNim"
-        txbNim.Size = New Size(219, 23)
+        txbNim.Size = New Size(512, 23)
         txbNim.TabIndex = 26
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
         Label7.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label7.ForeColor = Color.Transparent
-        Label7.Image = CType(resources.GetObject("Label7.Image"), Image)
+        Label7.ForeColor = Color.MediumPurple
         Label7.Location = New Point(63, 130)
         Label7.Name = "Label7"
         Label7.Size = New Size(39, 15)
@@ -261,7 +247,7 @@ Partial Class formRegister
         txbNama.Location = New Point(63, 148)
         txbNama.Margin = New Padding(3, 2, 3, 2)
         txbNama.Name = "txbNama"
-        txbNama.Size = New Size(219, 23)
+        txbNama.Size = New Size(512, 23)
         txbNama.TabIndex = 24
         ' 
         ' cbProdi
@@ -270,47 +256,69 @@ Partial Class formRegister
         cbProdi.Items.AddRange(New Object() {"Teknik Informatika", "Teknik Multimedia Jaringan", "Teknik Multimedia Digital"})
         cbProdi.Location = New Point(63, 363)
         cbProdi.Name = "cbProdi"
-        cbProdi.Size = New Size(219, 23)
+        cbProdi.Size = New Size(512, 23)
         cbProdi.TabIndex = 23
         ' 
-        ' Label4
+        ' Label10
         ' 
-        Label4.AutoSize = True
-        Label4.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = Color.Transparent
-        Label4.Image = CType(resources.GetObject("Label4.Image"), Image)
-        Label4.Location = New Point(63, 345)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(35, 15)
-        Label4.TabIndex = 22
-        Label4.Text = "Prodi"
+        Label10.AutoSize = True
+        Label10.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label10.ForeColor = Color.MediumPurple
+        Label10.Location = New Point(63, 182)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(31, 15)
+        Label10.TabIndex = 30
+        Label10.Text = "NIM"
         ' 
-        ' cbRole
+        ' Label11
         ' 
-        cbRole.FormattingEnabled = True
-        cbRole.Items.AddRange(New Object() {"mahasiswa", "admin"})
-        cbRole.Location = New Point(63, 420)
-        cbRole.Name = "cbRole"
-        cbRole.Size = New Size(219, 23)
-        cbRole.TabIndex = 29
+        Label11.AutoSize = True
+        Label11.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label11.ForeColor = Color.MediumPurple
+        Label11.Location = New Point(63, 402)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(30, 15)
+        Label11.TabIndex = 32
+        Label11.Text = "Role"
         ' 
-        ' Label9
+        ' Label12
         ' 
-        Label9.AutoSize = True
-        Label9.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label9.ForeColor = Color.Transparent
-        Label9.Image = CType(resources.GetObject("Label9.Image"), Image)
-        Label9.Location = New Point(63, 402)
-        Label9.Name = "Label9"
-        Label9.Size = New Size(30, 15)
-        Label9.TabIndex = 28
-        Label9.Text = "Role"
+        Label12.AutoSize = True
+        Label12.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label12.ForeColor = Color.MediumPurple
+        Label12.Location = New Point(63, 345)
+        Label12.Name = "Label12"
+        Label12.Size = New Size(35, 15)
+        Label12.TabIndex = 33
+        Label12.Text = "Prodi"
+        ' 
+        ' Label13
+        ' 
+        Label13.AutoSize = True
+        Label13.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label13.ForeColor = Color.MediumPurple
+        Label13.Location = New Point(63, 286)
+        Label13.Name = "Label13"
+        Label13.Size = New Size(57, 15)
+        Label13.TabIndex = 34
+        Label13.Text = "Password"
+        ' 
+        ' Label14
+        ' 
+        Label14.AutoSize = True
+        Label14.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label14.ForeColor = Color.MediumPurple
+        Label14.Location = New Point(63, 236)
+        Label14.Name = "Label14"
+        Label14.Size = New Size(60, 15)
+        Label14.TabIndex = 35
+        Label14.Text = "Username"
         ' 
         ' formRegister
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(685, 554)
+        ClientSize = New Size(932, 554)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
         Name = "formRegister"
@@ -334,17 +342,18 @@ Partial Class formRegister
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents txbPassword As TextBox
     Friend WithEvents txbUserName As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel2 As Panel
     Friend WithEvents cbProdi As ComboBox
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents txbNama As TextBox
-    Friend WithEvents Label8 As Label
     Friend WithEvents txbNim As TextBox
     Friend WithEvents cbRole As ComboBox
-    Friend WithEvents Label9 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label10 As Label
 End Class

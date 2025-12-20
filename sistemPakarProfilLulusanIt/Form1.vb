@@ -45,7 +45,7 @@ Public Class formLogin
                                 MessageBox.Show("Login Berhasil! Selamat Datang Admin, " & moduleKoneksi.CurrentUserName,
                                               "Admin Panel", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-                                Dim adminForm As New adminForm()
+                                Dim adminForm As New adminDashboard()
                                 adminForm.Show()
                                 Me.Hide()
 
